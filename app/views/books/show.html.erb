@@ -1,0 +1,20 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<!-- 1. titleとbodyの表示 -->
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @book.body %>
+</p>
+
+<!-- 2. editとbackのリンク -->
+<%= link_to 'Edit', edit_book_path(@book) %>
+|
+<%= link_to 'Back', books_path %>
+<%= link_to 'Destroy', book_path(@book), data: { turbo_method: :delete, turbo_confirm: "本当に削除?" } %>
